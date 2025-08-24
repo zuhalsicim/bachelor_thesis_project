@@ -1,0 +1,14 @@
+name: ehrsql_eval
+channels:
+  - defaults
+dependencies:
+  - python=3.7
+  - pip
+  - pip:
+    - [cite_start]pandas==1.5.3 [cite: 82]
+    - [cite_start]dask [cite: 83]
+    - [cite_start]scikit-learn [cite: 83]
+    - [cite_start]func-timeout [cite: 83]
+    - [cite_start]transformers==4.19.2 [cite: 73, 84]
+    - [cite_start]sentencepiece [cite: 74, 84]
+    - requests
