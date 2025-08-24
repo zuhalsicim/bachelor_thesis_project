@@ -1,0 +1,9 @@
+[submodule "external/EHRSQL"]
+	path = external/EHRSQL
+	url = https://github.com/glee4810/EHRSQL.git
+[submodule "external/ehrsql-2024"]
+	path = external/ehrsql-2024
+	url = https://github.com/glee4810/ehrsql-2024.git
+[submodule "external/llama.cpp"]
+	path = external/llama.cpp
+	url = https://github.com/ggerganov/llama.cpp.git
