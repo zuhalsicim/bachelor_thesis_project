@@ -10,7 +10,7 @@ mkdir -p predictions
 
 # 2. Download the LLM Model
 echo "Downloading the LLM model file (this may take a while)..."
-wget -P ./models https://huggingface.co/TheBloke/CodeLlama-7B-Instruct-GGUF/resolve/main/codellama-7b-instruct.Q4_K_M.gguf
+wget -P ./models wget -P ./models https://huggingface.co/TheBloke/OmniSQL-7B-GGUF/resolve/main/omnisql-7b.Q4_K_S.gguf
 
 # 3. Compile llama.cpp
 echo "Compiling the llama.cpp server with GPU support..."
