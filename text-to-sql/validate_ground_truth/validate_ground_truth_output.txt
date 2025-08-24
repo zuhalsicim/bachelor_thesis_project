@@ -1,0 +1,34 @@
+--- Ground Truth Validation Complete ---
+Total Queries Tested: 931
+Successful Executions: 924
+Failed Executions: 7
+----------------------------------------
+
+--- Details of Failed Queries ---
+ID: 40de69e222a145027e4f2169
+  Query: SELECT 1 - COUNT(*)>0 FROM chartevents WHERE chartevents.stay_id IN ( SELECT icustays.stay_id FROM icustays WHERE icustays.hadm_id IN ( SELECT admissions.hadm_id FROM admissions WHERE admissions.subject_id = 10029291 ) ) AND chartevents.itemid IN ( SELECT d_items.itemid FROM d_items WHERE d_items.label = 'arterial blood pressure diastolic' AND d_items.linksto = 'chartevents' ) AND chartevents.valuenum NOT BETWEEN diastolic_bp_lower AND diastolic_bp_upper AND strftime('%Y-%m',chartevents.charttime) = '2100-03'
+  Error: no such column: diastolic_bp_lower
+
+ID: 41e5c617af3a91492dc2e3d0
+  Query: SELECT 1 - COUNT(*)>0 FROM chartevents WHERE chartevents.stay_id IN ( SELECT icustays.stay_id FROM icustays WHERE icustays.hadm_id IN ( SELECT admissions.hadm_id FROM admissions WHERE admissions.subject_id = 10016742 AND admissions.dischtime IS NOT NULL ORDER BY admissions.admittime DESC LIMIT 1 ) ) AND chartevents.itemid IN ( SELECT d_items.itemid FROM d_items WHERE d_items.label = 'o2 saturation pulseoxymetry' AND d_items.linksto = 'chartevents' ) AND chartevents.valuenum NOT BETWEEN sao2_lower AND sao2_upper
+  Error: no such column: sao2_lower
+
+ID: 97551740a3b364d8e2b6214c
+  Query: SELECT 1 - COUNT(*)>0 FROM chartevents WHERE chartevents.stay_id IN ( SELECT icustays.stay_id FROM icustays WHERE icustays.hadm_id IN ( SELECT admissions.hadm_id FROM admissions WHERE admissions.subject_id = 10018081 ) ) AND chartevents.itemid IN ( SELECT d_items.itemid FROM d_items WHERE d_items.label = 'respiratory rate' AND d_items.linksto = 'chartevents' ) AND chartevents.valuenum NOT BETWEEN respiration_lower AND respiration_upper AND datetime(chartevents.charttime,'start of year') = datetime(current_time,'start of year','-0 year') AND strftime('%m-%d',chartevents.charttime) = '12-29'
+  Error: no such column: respiration_lower
+
+ID: b23b961d0f2fe2cf1eec5a22
+  Query: SELECT 1 - COUNT(*)>0 FROM chartevents WHERE chartevents.stay_id IN ( SELECT icustays.stay_id FROM icustays WHERE icustays.hadm_id IN ( SELECT admissions.hadm_id FROM admissions WHERE admissions.subject_id = 10019777 AND admissions.dischtime IS NOT NULL ORDER BY admissions.admittime ASC LIMIT 1 ) ) AND chartevents.itemid IN ( SELECT d_items.itemid FROM d_items WHERE d_items.label = 'heart rate' AND d_items.linksto = 'chartevents' ) AND chartevents.valuenum NOT BETWEEN heart_rate_lower AND heart_rate_upper
+  Error: no such column: heart_rate_lower
+
+ID: 9a2f8970fbd241c4a1994704
+  Query: SELECT 1 - COUNT(*)>0 FROM chartevents WHERE chartevents.stay_id IN ( SELECT icustays.stay_id FROM icustays WHERE icustays.hadm_id IN ( SELECT admissions.hadm_id FROM admissions WHERE admissions.subject_id = 10015931 ) ) AND chartevents.itemid IN ( SELECT d_items.itemid FROM d_items WHERE d_items.label = 'heart rate' AND d_items.linksto = 'chartevents' ) AND chartevents.valuenum NOT BETWEEN heart_rate_lower AND heart_rate_upper AND strftime('%Y-%m',chartevents.charttime) >= '2100-10'
+  Error: no such column: heart_rate_lower
+
+ID: 9e463af82f31adb188a12310
+  Query: SELECT 1 - COUNT(*)>0 FROM chartevents WHERE chartevents.stay_id IN ( SELECT icustays.stay_id FROM icustays WHERE icustays.hadm_id IN ( SELECT admissions.hadm_id FROM admissions WHERE admissions.subject_id = 10021118 ) ) AND chartevents.itemid IN ( SELECT d_items.itemid FROM d_items WHERE d_items.label = 'temperature celsius' AND d_items.linksto = 'chartevents' ) AND chartevents.valuenum NOT BETWEEN temperature_lower AND temperature_upper AND datetime(chartevents.charttime,'start of year') = datetime(current_time,'start of year','-1 year') AND strftime('%m-%d',chartevents.charttime) = '12-24'
+  Error: no such column: temperature_lower
+
+ID: b8e813ddf11159fa6c4ca4ca
+  Query: SELECT 1 - COUNT(*)>0 FROM chartevents WHERE chartevents.stay_id IN ( SELECT icustays.stay_id FROM icustays WHERE icustays.hadm_id IN ( SELECT admissions.hadm_id FROM admissions WHERE admissions.subject_id = 10007818 ) ) AND chartevents.itemid IN ( SELECT d_items.itemid FROM d_items WHERE d_items.label = 'o2 saturation pulseoxymetry' AND d_items.linksto = 'chartevents' ) AND chartevents.valuenum NOT BETWEEN sao2_lower AND sao2_upper AND datetime(chartevents.charttime,'start of year') = datetime(current_time,'start of year','-0 year') AND strftime('%m-%d',chartevents.charttime) = '07-08'
+  Error: no such column: sao2_lower

@@ -1,0 +1,7 @@
+Linux
+
+llama-server.exe -m "C:\Users\nuba\.lmstudio\models\mradermacher\Arctic-Text2SQL-R1-7B-GGUF\Arctic-Text2SQL-R1-7B.Q4_K_S.gguf" -ngl 18 
+
+Anaconda Prompt 
+
+(ehrsql_eval) C:\Uni\Bachelorarbeit\bachelor_thesis_project>python EHRSQL/evaluate.py --db_path "C:\Uni\Bachelorarbeit\bachelor_thesis_project\evaluation_data\mimic_iv.sqlite" --data_file "C:\Uni\Bachelorarbeit\bachelor_thesis_project\evaluation_data\annotated.json" --pred_file "C:\Uni\Bachelorarbeit\bachelor_thesis_project\input\res\prediction.json"

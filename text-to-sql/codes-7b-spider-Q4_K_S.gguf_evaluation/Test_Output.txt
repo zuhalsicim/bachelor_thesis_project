@@ -1,0 +1,9 @@
+(ehrsql_eval) C:\Uni\Bachelorarbeit\bachelor_thesis_project>python EHRSQL/evaluate.py --db_path "C:\Uni\Bachelorarbeit\bachelor_thesis_project\evaluation_data\mimic_iv.sqlite" --data_file "C:\Uni\Bachelorarbeit\bachelor_thesis_project\evaluation_data\annotated.json" --pred_file "C:\Uni\Bachelorarbeit\bachelor_thesis_project\input\res\prediction.json"
+{
+  "precision_ans": 80.05,
+  "recall_ans": 100.0,
+  "f1_ans": 88.92,
+  "precision_exec": 13.76,
+  "recall_exec": 17.19,
+  "f1_exec": 15.28
+}
