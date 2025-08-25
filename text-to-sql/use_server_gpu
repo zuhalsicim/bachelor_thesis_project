@@ -1,0 +1,94 @@
+To run a Large Language Model (LLM) using your university's GPU server with llama.cpp and SSH port forwarding, you'll need to set up a pipeline that allows your local machine to communicate with a llama.cpp server running on the remote GPU server. This approach avoids loading the model onto the university machine directly.
+
+Step 1: Install llama.cpp
+First, you need to install llama.cpp on both your local machine and the remote university server. This is crucial as you'll be using llama.cpp to run the model server on the university machine and to potentially use the client on your local machine.
+
+Remote Server:
+
+Log in to your university server via SSH.
+
+Clone the llama.cpp repository from GitHub:
+
+Bash
+
+git clone https://github.com/ggerganov/llama.cpp.git
+cd llama.cpp
+Build llama.cpp with GPU support. The specific command will depend on the GPU type (e.g., NVIDIA, AMD). For NVIDIA GPUs, you'll need the CUDA toolkit:
+
+Bash
+
+# For NVIDIA GPUs
+make LLAMA_CUBLAS=1
+Local Machine:
+
+Follow the same steps to install llama.cpp on your local machine. This is important for running the client and scripts like the one you provided.
+
+Step 2: Download the LLM
+You need to download the quantized LLM model file (e.g., a .gguf file). Download this file to your local machine. Do not transfer it to the university server. This is the key to avoiding a large data transfer to the remote machine.
+
+Step 3: Run the llama.cpp Server on the Remote Machine
+With llama.cpp installed on the remote server, you can now start the server. This server will run on the GPU, but it won't have the model loaded yet. The model will be provided later via the SSH tunnel.
+
+Connect to your university server via SSH.
+
+Navigate to the llama.cpp directory.
+
+Start the llama.cpp server using the server executable. The server will listen for a connection, but it won't load the model until a request is made.
+
+Bash
+
+./server -m placeholder.gguf -c 4096 --host 127.0.0.1 -ngl 999
+./server: This command runs the server executable.
+
+-m placeholder.gguf: This is a placeholder model name. The server requires a model path at startup, but the actual model weights will be loaded via the SSH tunnel from your local machine.
+
+-c 4096: This sets the context size. Adjust this based on your needs.
+
+--host 127.0.0.1: This is critical. It binds the server to the loopback address, meaning it will only accept connections from the remote server itself. This is a security measure that prevents external access.
+
+-ngl 999: This offloads the entire model to the GPU. Adjust this number based on your GPU's VRAM.
+
+Step 4: Set up SSH Port Forwarding
+Now, you need to create an SSH tunnel from your local machine to the remote server. This tunnel will forward a port on your local machine to the llama.cpp server's port on the remote machine. This is how you'll communicate with the server without exposing it to the public internet.
+
+From your local machine, open a new terminal and run the following command:
+
+Bash
+
+ssh -L 8080:localhost:8080 your_username@uni_server_address
+ssh: The command for a secure shell.
+
+-L 8080:localhost:8080: This is the port forwarding command.
+
+The first 8080 is the port on your local machine.
+
+localhost:8080 refers to the server's loopback address (localhost) and the port (8080) that the llama.cpp server is listening on.
+
+your_username@uni_server_address: Replace this with your university username and the server's address.
+
+This command creates a secure tunnel. Any data sent to localhost:8080 on your local machine will be securely forwarded to localhost:8080 on the remote server, where the llama.cpp server is running.
+
+Step 5: Modify and Run the Script
+The run_benchmark.py script you provided is already set up to make requests to a server at http://localhost:8080.
+
+Modify run_benchmark.py:
+
+You'll need to update the SERVER_URL to point to the correct address if it's not http://localhost:8080.
+
+You'll also need to update MAX_TOKENS, SCHEMA_PATH, and BENCHMARK_FILE_PATH to match your local file paths.
+
+Run the script:
+
+Now, from a new terminal on your local machine, run the run_benchmark.py script.
+
+Bash
+
+python run_benchmark.py
+The script will attempt to connect to http://localhost:8080. Because you set up the SSH tunnel, this request will be forwarded to the llama.cpp server on the remote machine.
+
+The llama.cpp server will then receive the prompt and, critically, it will receive the model weights through the secure tunnel, loading them into the GPU's VRAM for inference.
+
+The generated SQL will be sent back through the tunnel to your local machine, where the run_benchmark.py script will process it and save the results.
+
+Remote machine this command:
+

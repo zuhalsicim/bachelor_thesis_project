@@ -2,10 +2,13 @@ import os
 import json
 import requests 
 
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+
 # --- Configuration ---
-SERVER_URL = "http://localhost:8080/completion"
-SCHEMA_PATH = "../evaluation_data/mimic_iv.sql"
-BENCHMARK_FILE_PATH = "../evaluation_data/annotated.json"
+SERVER_URL = "http://localhost:8081/completion"
+SCHEMA_PATH = "./evaluation_data/mimic_iv.sql"
+BENCHMARK_FILE_PATH = "./evaluation_data/annotated.json"
 PREDICTION_FILE_PATH = "./input/res/prediction.json"
 MAX_TOKENS = 256
 

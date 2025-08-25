@@ -54,11 +54,11 @@ def main():
     """
     # --- File Paths (Adjust if necessary) ---
     # Path to your original, "dirty" prediction file from the model
-    original_file_path = r"C:\Uni\Bachelorarbeit\bachelor_thesis_project\text-to-sql\input\res\prediction.json"
-    
+    original_file_path = "input/res/prediction.json"
+
     # Path where the new, cleverly cleaned file will be saved
-    output_directory = r"C:\Uni\Bachelorarbeit\bachelor_thesis_project\evaluation_data"
-    cleaned_file_path = os.path.join(output_directory, "prediction_cleaned_advanced.json")
+    output_directory = "evaluation_data"
+    cleaned_file_path = os.path.join(output_directory, "prediction_cleaned.json")
 
     print(f"Loading original predictions from: {original_file_path}")
 
