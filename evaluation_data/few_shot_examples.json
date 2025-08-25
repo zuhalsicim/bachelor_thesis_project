@@ -1,0 +1,22 @@
+[
+  {
+    "question": "How many patients are female?",
+    "query": "SELECT count(*) FROM patients WHERE gender = 'F'"
+  },
+  {
+    "question": "What is the total number of admissions?",
+    "query": "SELECT count(*) FROM admissions"
+  },
+  {
+    "question": "Show the different marital statuses available for patients.",
+    "query": "SELECT DISTINCT marital_status FROM patients"
+  },
+  {
+    "question": "How many lab events are there for the item with itemid 50889?",
+    "query": "SELECT count(*) FROM labevents WHERE itemid = 50889"
+  },
+  {
+    "question": "Find the number of patients who died during their hospital admission.",
+    "query": "SELECT count(*) FROM admissions WHERE hospital_expire_flag = 1"
+  }
+]

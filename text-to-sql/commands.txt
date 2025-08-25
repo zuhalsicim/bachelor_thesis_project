@@ -5,3 +5,8 @@ llama-server.exe -m "C:\Users\nuba\.lmstudio\models\mradermacher\Arctic-Text2SQL
 Anaconda Prompt 
 
 (ehrsql_eval) C:\Uni\Bachelorarbeit\bachelor_thesis_project>python EHRSQL/evaluate.py --db_path "C:\Uni\Bachelorarbeit\bachelor_thesis_project\evaluation_data\mimic_iv.sqlite" --data_file "C:\Uni\Bachelorarbeit\bachelor_thesis_project\evaluation_data\annotated.json" --pred_file "C:\Uni\Bachelorarbeit\bachelor_thesis_project\input\res\prediction.json"
+
+sicim@pc12830:~$ cd ~/bachelor_thesis_project/external/llama.cpp/build/bin
+sicim@pc12830:~/bachelor_thesis_project/external/llama.cpp/build/bin$ ./llama-server -m /app/home/sicim/bachelor_thesis_project/models/OmniSQL-7B.Q4_K_S.gguf -c 4096 --host 127.0.0.1 -ngl 999 --port 8081
+
+PS C:\Users\nuba> ssh -L 8081:localhost:8081 sicim@pc12830.mathematik.uni-marburg.de
