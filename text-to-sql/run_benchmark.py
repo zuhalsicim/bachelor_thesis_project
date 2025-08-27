@@ -10,7 +10,7 @@ SERVER_URL = "http://localhost:8081/completion"
 SCHEMA_PATH = "./evaluation_data/mimic_iv.sql"
 BENCHMARK_FILE_PATH = "./evaluation_data/annotated.json"
 PREDICTION_FILE_PATH = "./input/res/prediction.json"
-MAX_TOKENS = 256
+MAX_TOKENS = 2048
 
 PROMPT_TEMPLATE = """### Instruction:
 You are a SQL expert. Given a database schema and a question, your job is to write a syntactically correct SQL query.
