@@ -81,7 +81,6 @@ def main():
         model=model,
         train_dataset=dataset,
         peft_config=lora_config,
-        dataset_text_field="text", # The key in your finetune_data.jsonl
         max_seq_length=1024,
         tokenizer=tokenizer,
         args=training_args,
