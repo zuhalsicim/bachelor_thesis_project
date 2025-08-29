@@ -10,3 +10,8 @@ sicim@pc12830:~$ cd ~/bachelor_thesis_project/external/llama.cpp/build/bin
 sicim@pc12830:~/bachelor_thesis_project/external/llama.cpp/build/bin$ ./llama-server -m /app/home/sicim/bachelor_thesis_project/models/OmniSQL-7B.Q4_K_S.gguf -c 4096 --host 127.0.0.1 -ngl 999 --port 8081
 
 PS C:\Users\nuba> ssh -L 8081:localhost:8081 sicim@pc12830.mathematik.uni-marburg.de
+
+100%|█████████████████████████████████████████████████████████████████████████████| 1755/1755 [5:31:16<00:00, 11.33s/it]
+\n Fine-tuning complete!
+ LoRA adapter saved to: ./models/lora-adapter-arctic-ehrsql
+(ft-env) sicim@pc12830:~/bachelor_thesis_project$
