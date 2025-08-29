@@ -66,7 +66,7 @@ def main():
     # --- 5. Configure Training Arguments ---
     training_args = TrainingArguments(
         output_dir=OUTPUT_DIR,
-        per_device_train_batch_size=4,
+        per_device_train_batch_size=2,
         gradient_accumulation_steps=2,
         learning_rate=2e-4,
         num_train_epochs=3,
