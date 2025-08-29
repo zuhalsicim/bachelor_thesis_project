@@ -1,0 +1,11 @@
+[Done] exited with code=0 in 5359.5 seconds
+
+(ehrsql_eval) C:\Uni\Bachelorarbeit\bachelor_thesis_project\external>python EHRSQL/evaluate.py --db_path "C:\Uni\Bachelorarbeit\bachelor_thesis_project\evaluation_data\mimic_iv.sqlite" --data_file "C:\Uni\Bachelorarbeit\bachelor_thesis_project\evaluation_data\annotated.json" --pred_file C:\Uni\Bachelorarbeit\bachelor_thesis_project\evaluation_data\prediction_cleaned.json
+{
+  "precision_ans": 80.05,
+  "recall_ans": 100.0,
+  "f1_ans": 88.92,
+  "precision_exec": 28.98,
+  "recall_exec": 36.2,
+  "f1_exec": 32.19
+}

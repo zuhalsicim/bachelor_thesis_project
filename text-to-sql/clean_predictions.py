@@ -54,7 +54,7 @@ def main():
     """
     # --- File Paths (Adjust if necessary) ---
     # Path to your original, "dirty" prediction file from the model
-    original_file_path = "input/res/prediction.json"
+    original_file_path = "input/res/prediction_rag.json"
 
     # Path where the new, cleverly cleaned file will be saved
     output_directory = "evaluation_data"
