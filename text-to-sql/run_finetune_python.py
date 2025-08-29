@@ -8,15 +8,15 @@ import os
 
 # --- Configuration ---
 # The base model from Hugging Face (NOT the GGUF version)
-BASE_MODEL_NAME = "Snowflake/Arctic-Text2SQL-R1-7B" 
+BASE_MODEL_NAME = "seeklhy/codes-7b" 
 # The training data you already created
 TRAIN_DATA_PATH = "./train_data/finetune_data.jsonl"
 # Directory where the fine-tuned LoRA adapter will be saved
-OUTPUT_DIR = "./models/lora-adapter-arctic-ehrsql"
+OUTPUT_DIR = "./models/lora-adapter-seeklhy-codes-7b"
 
 def main():
     """
-    Fine-tunes the Arctic Text2SQL model using QLoRA (4-bit quantization).
+    Fine-tunes the seeklhy/codes-7b model using QLoRA (4-bit quantization).
     """
     print(" Starting Python-based fine-tuning process...")
 

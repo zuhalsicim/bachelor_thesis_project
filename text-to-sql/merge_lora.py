@@ -5,9 +5,9 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import os
 
 # --- Configuration ---
-BASE_MODEL_NAME = "Snowflake/Arctic-Text2SQL-R1-7B"
-LORA_ADAPTER_PATH = "./models/lora-adapter-arctic-ehrsql/checkpoint-1755"
-MERGED_MODEL_PATH = "./models/finetuned-arctic-7b-merged"
+BASE_MODEL_NAME = "seeklhy/codes-7b"
+LORA_ADAPTER_PATH = "./models/lora-adapter-seeklhy-codes-7b/checkpoint-1755"
+MERGED_MODEL_PATH = "./models/finetuned-seeklhy-codes-7b-merged"
 
 def main():
     """
